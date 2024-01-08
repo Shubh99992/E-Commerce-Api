@@ -5,9 +5,9 @@ async function createCart(user) {
 
   try {
 
-    const cart = new cart({ user });
+    const cart2 = new cart({ user });
 
-    const createCart = await cart.save();
+    const createCart = await cart2.save();
     return createCart;
 
   } catch (error) {

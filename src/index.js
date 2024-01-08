@@ -3,6 +3,7 @@ const express =require("express")
 const cors=require("cors")
 
 const  app=express();
+const authContoller = require('./controller/auth.controller')
 
 app.use(express.json())
 app.use(cors())
@@ -12,9 +13,11 @@ app.get("/",(req,res)=>{
 })
 
 const authRouters=require("./routes/auth.route")
-app.use("/auth",authRouters);
+app.post("/signup",authContoller.register);
 
 const userRouters=require("./routes/user.route");
 app.use("/api/users",userRouters);
 
 module.exports=app;
+
+
